@@ -20,7 +20,8 @@ var copyToClipboard = function(str)
 };
 var copy_str="";
 var req = document.getElementsByTagName("pre")[0];
-if(req!=undefined)
+var copy = document.getElementById('copy');
+if(req!=undefined && copy==undefined)
 {
   if(req.childElementCount==1)
   {   var child=(req.children)[0];
@@ -42,5 +43,5 @@ if(req!=undefined)
         idx++;
       }
   }
-  req.innerHTML="<button class='button blue right' onclick='copyToClipboard(copy_str)'>Copy</button>"+req.innerHTML;
+  req.innerHTML="<button class='button blue right' onclick='copyToClipboard(copy_str)' id='copy'>Copy</button>"+req.innerHTML;
 }
