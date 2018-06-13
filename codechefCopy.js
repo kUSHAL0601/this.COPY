@@ -18,11 +18,11 @@ var copyToClipboard = function(str)
     document.getSelection().addRange(selected);
   }
 };
-var copy_str="";
 var req = document.getElementsByTagName("pre")[0];
 var copy = document.getElementById('copy');
 if(req!=undefined && copy==undefined)
 {
+  var copy_str="";
   if(req.childElementCount==1)
   {   var child=(req.children)[0];
       copy_str=child.innerHTML;

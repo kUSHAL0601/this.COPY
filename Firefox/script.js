@@ -18,10 +18,11 @@ var copyToClipboard = function(str)
     document.getSelection().addRange(selected);
   }
 };
-var copy_str="";
 var req = document.getElementsByTagName("pre")[0];
-if(req!=undefined)
+var copy = document.getElementById('copy');
+if(req!=undefined && copy==undefined)
 {
+  var copy_str="";
   if(req.childElementCount==1)
   {   var child=(req.children)[0];
       copy_str=child.innerHTML;
@@ -42,5 +43,5 @@ if(req!=undefined)
         idx++;
       }
   }
-  req.innerHTML="<button class='button blue right' onclick='copyToClipboard(copy_str)'>Copy</button>"+req.innerHTML;
+  req.innerHTML="<button class='button blue right' onclick='copyToClipboard(copy_str)' id='copy'>Copy</button>"+req.innerHTML;
 }
